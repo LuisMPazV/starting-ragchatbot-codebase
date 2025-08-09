@@ -59,7 +59,8 @@ This is a **Retrieval-Augmented Generation (RAG) system** for course materials w
 
 **Tool System** (`search_tools.py`):
 - Course search tool for AI to query vector database
-- Tool manager handles registration and execution
+- Tool manager handles registration and execution  
+- Returns structured source data with lesson links for clickable UI citations
 
 ### Document Format
 Course files expected format:
@@ -83,5 +84,11 @@ Lesson 1: Next Topic
 4. Session context preserved across conversation turns
 
 The system adds contextual prefixes to chunks: `"Course [title] Lesson [X] content: [chunk]"` to improve retrieval relevance.
+
+### Recent Features
+- **Clickable Source Links**: Source citations in chat responses are clickable links that open lesson videos in new tabs
+- **Structured Source Data**: API returns source objects with `{text, url}` format for enhanced UI interactivity
+
+## Development Notes
 - Always use uv to run the server, never use pip
-- use uv to run Python files
+- Use uv to run Python files

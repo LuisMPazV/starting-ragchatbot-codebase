@@ -393,6 +393,41 @@ header h1 {
     cursor: not-allowed;
 }
 
+/* New Chat Button */
+#newChatButton {
+    padding: 0.75rem 1.25rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    min-width: 52px;
+}
+
+#newChatButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+#newChatButton:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+#newChatButton:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+#newChatButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 /* Loading Animation */
 .loading {
     display: inline-flex;
@@ -697,6 +732,11 @@ details[open] .suggested-header::before {
     }
     
     #sendButton {
+        padding: 0.75rem 1rem;
+        min-width: 48px;
+    }
+    
+    #newChatButton {
         padding: 0.75rem 1rem;
         min-width: 48px;
     }
