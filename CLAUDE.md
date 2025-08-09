@@ -20,6 +20,24 @@ cd backend && uv run uvicorn app:app --reload --port 8000
 uv sync
 ```
 
+### Code Quality Tools
+```bash
+# Format code with Black and isort
+./scripts/format.sh
+# Or manually:
+uv run black backend/ main.py
+uv run isort backend/ main.py
+
+# Run linting checks
+./scripts/lint.sh
+# Or manually:
+uv run flake8 backend/ main.py --max-line-length=88 --extend-ignore=E203,W503
+uv run mypy backend/ main.py --ignore-missing-imports
+
+# Run all quality checks
+./scripts/quality-check.sh
+```
+
 ### Environment Setup
 Create `.env` file in root with:
 ```
